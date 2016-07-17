@@ -1,0 +1,35 @@
+{# -*- mode: jinja2 -*- #}
+
+{#
+
+Form Templates.
+
+#}
+
+
+
+{% from "Field/index.html" import field, area, fieldLine  %}
+
+
+{# Form row basic. #}
+
+{% macro formRow(opts) %}
+
+  {% set type = opts.type | default("text") %}
+  {% set placeholder = opts.default %}
+  {% set value = opts.value %}
+  {% set classNames = opts.classNames | default([]) %}
+  {% set disabled = opts.disabled | default(false) %}
+  {% set dark = opts.dark | default(false) %}
+  
+  <div class="form-row">
+    <label class="form-label" for="">
+      姓名
+    </label>
+
+    {{ field({ default: "A Form row" }) }}
+  </div>
+  
+  
+    
+{% endmacro %}
